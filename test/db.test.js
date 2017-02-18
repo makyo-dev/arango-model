@@ -2,8 +2,10 @@ const co = require('co')
 
 const expect = require('chai').expect
 
+const password = process.env.ARANGO_ROOT_PASSWORD || 'toor'
+
 const DB = require('../db.js')
-const db = new DB({ database: 'test', username: 'test', password: 'test' })
+const db = new DB({ database: 'test', username: 'root', password })
 
 const helpers = require('./helpers.js')
 
