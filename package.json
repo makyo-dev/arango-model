@@ -1,0 +1,54 @@
+{
+  "name": "arango-model",
+  "version": "0.0.1",
+  "description": "Simple wrapper for ArangoDB",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "prepush": "npm test",
+    "lint": "standard --fix",
+    "test": "npm run lint && mocha -b test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makyo-dev/arango-model.git"
+  },
+  "keywords": [
+    "arangodb",
+    "model"
+  ],
+  "author": "makyo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makyo-dev/arango-model/issues"
+  },
+  "homepage": "https://github.com/makyo-dev/arango-model#readme",
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "aqb": "2.1.0",
+    "arangojs": "5.6.0",
+    "co": "4.6.0",
+    "joi": "10.2.2",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "husky": "^0.13.1",
+    "mocha": "^3.2.0",
+    "standard": "^8.6.0"
+  }
+}

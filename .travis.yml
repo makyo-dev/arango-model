@@ -1,0 +1,17 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - "6"
+
+services:
+  - docker
+
+cache:
+  yarn: true
+
+before_install:
+  - docker run --name arango -e ARANGO_ROOT_PASSWORD=toor -p 127.0.0.1:8529:8529 -d arangodb
+  - echo 'until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:8529); do printf .; sleep 1; done; echo' | docker exec -i arango bash
+  - echo 'db._createDatabase("test");' | docker exec -i arango arangosh --server.password toor
