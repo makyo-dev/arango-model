@@ -2,5 +2,5 @@
 Simple wrapper for ArangoDB
 
 ## TODO
-  - documetation
+  - documentation
   - add badges
