@@ -15,12 +15,16 @@ class DB {
     username,
     password,
     host = '127.0.0.1',
-    port = '8529',
+    port = 8529,
+    https = false,
     verbose = false
   }) {
+    if (https) {
+      port = 443
+    }
     this._verbose = verbose
     this.arango = require('arangojs')({
-      url: `http://${username}:${password}@${host}:8529`,
+      url: `http${https ? 's' : ''}://${username}:${password}@${host}:${port}`,
       databaseName: database
     })
   }
