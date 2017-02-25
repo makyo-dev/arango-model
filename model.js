@@ -182,7 +182,7 @@ function qFilter (q, filter, db) {
         if (arg === 'null') {
           arg = null
         } else {
-          let num = parseInt(arg)
+          let num = +arg
           if (!arg.includes('\'') && !arg.includes('"') && num) {
             arg = db.qb.num(num)
           } else {
